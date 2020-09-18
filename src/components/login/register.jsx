@@ -2,9 +2,9 @@ import React from "react";
 import loginImg from "../../login.svg";
 import "./style.scss";
 
-const Register = () => {
+const Register = (props) => {
   return (
-    <div className="base-container">
+    <div className="base-container" ref={props.ref}>
       <div className="header">Register</div>
       <div className="content">
         <div className="image">
