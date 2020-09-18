@@ -4,16 +4,26 @@ const login = () => {
   return (
     <main>
       <form>
-        <div class="field">
+        <div className="field">
           <input
             type="email"
             name="email"
-            class="input"
+            className="input"
             placeholder="Enter Email"
           />
           <label for="email" class="label">
             Email
           </label>
+        </div>
+        <div className="field">
+          <input
+            //type={showPassword ? "text" : "password"}
+            name="email"
+            className="input"
+            placeholder="Enter password"
+            //onInput={validatePassword}
+            //classvalid={strength > 3}
+          />
         </div>
       </form>
     </main>
