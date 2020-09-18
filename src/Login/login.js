@@ -1,4 +1,5 @@
 import React from "react";
+import "./login.css";
 
 const login = () => {
   return (
@@ -11,7 +12,7 @@ const login = () => {
             className="input"
             placeholder="Enter Email"
           />
-          <label for="email" class="label">
+          <label for="email" className="label">
             Email
           </label>
         </div>
@@ -24,6 +25,9 @@ const login = () => {
             //onInput={validatePassword}
             //classvalid={strength > 3}
           />
+          <label for="password" className="label">
+            Password
+          </label>
         </div>
       </form>
     </main>
