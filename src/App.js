@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import Login from "./components/login/login";
 import Register from "./components/login/register";
@@ -9,10 +9,6 @@ function App() {
   const switchLogginHandler = () => {
     setisLogginActive(!isLogginActive);
   };
-
-  useEffect(() => {
-    return () => {};
-  }, [isLogginActive]);
 
   var current = isLogginActive ? "Register" : "Login";
   var currentActive = isLogginActive ? "right-side left" : "right-side right";
