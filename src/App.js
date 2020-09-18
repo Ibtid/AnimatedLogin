@@ -15,7 +15,7 @@ function App() {
   }, [isLogginActive]);
 
   var current = isLogginActive ? "Register" : "Login";
-  var currentActive = isLogginActive ? "login" : "register";
+  var currentActive = isLogginActive ? "right-side left" : "right-side right";
 
   return (
     <div className="App">
@@ -37,7 +37,7 @@ function App() {
 
 const RightSide = (props) => {
   return (
-    <div className="right-side left" onClick={props.onClick}>
+    <div className={props.currentActive} onClick={props.onClick}>
       <div className="inner-container">
         <div className="text">{props.current}</div>
       </div>
