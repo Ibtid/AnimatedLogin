@@ -22,9 +22,9 @@ const Login = () => {
         </div>
       </div>
       <div className="footer">
-        <div type="button" className="btn">
+        <button type="button" className="btn">
           Login
-        </div>
+        </button>
       </div>
     </div>
   );

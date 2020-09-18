@@ -25,9 +25,9 @@ const Register = () => {
         </div>
       </div>
       <div className="footer">
-        <div type="button" className="btn">
+        <button type="button" className="btn">
           Register
-        </div>
+        </button>
       </div>
     </div>
   );
