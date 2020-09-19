@@ -24,25 +24,27 @@ const Login = () => {
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
+            {errors.username && <p className="error">{errors.username}</p>}
             <input
+              className={`${errors.username && "inputError"}`}
               type="text"
               name="username"
               placeholder="Username"
               value={values.username}
               onChange={handleChange}
             />
-            {errors.username && <p>{errors.username}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="username">Password</label>
+            {errors.password && <p className="error">{errors.password}</p>}
             <input
+              className={`${errors.password && "inputError"}`}
               type="password"
               name="password"
               placeholder="Password"
               value={values.password}
               onChange={handleChange}
             />
-            {errors.password && <p>{errors.password}</p>}
           </div>
           <div className="footer">
             <button type="submit" className="btn">

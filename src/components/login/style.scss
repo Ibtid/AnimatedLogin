@@ -37,6 +37,11 @@
         align-items: flex-start;
         width: fit-content;
 
+        .error {
+          color: red;
+          font-size: 10px;
+        }
+
         label {
           font-size: 20px;
         }
@@ -57,6 +62,9 @@
             outline: none;
             box-shadow: 0px 0px 12px 0.8px #0e81ce96;
           }
+        }
+        .inputError {
+          box-shadow: 0px 0px 8px 0.8px #ff0f0f;
         }
       }
     }
