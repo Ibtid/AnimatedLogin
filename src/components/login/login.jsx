@@ -2,10 +2,13 @@ import React from "react";
 import loginImg from "../../login.svg";
 import "./style.scss";
 import useForm from "../../useForm";
-import validateLogin from "../../validateLogin";
+import validate from "../../validateLogin";
 
 const Login = () => {
-  const { handleChange, handleSubmit, values } = useForm(submit);
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    submit,
+    validate
+  );
 
   function submit() {
     console.log("Submitted Succesfully");
@@ -28,6 +31,7 @@ const Login = () => {
               value={values.username}
               onChange={handleChange}
             />
+            {errors.username && <p>{errors.username}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="username">Password</label>
@@ -38,6 +42,7 @@ const Login = () => {
               value={values.password}
               onChange={handleChange}
             />
+            {errors.password && <p>{errors.password}</p>}
           </div>
           <div className="footer">
             <button type="submit" className="btn">

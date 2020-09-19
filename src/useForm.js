@@ -1,8 +1,9 @@
 import { useState } from "react";
 
-const useForm = (callBack) => {
+const useForm = (callBack, validate) => {
   const [values, setValues] = useState({ username: "", password: "" });
   const [errors, setErrors] = useState({ username: "", password: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -15,13 +16,16 @@ const useForm = (callBack) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     //handling errors
-    callBack();
+    setErrors(validate(values));
+    setIsSubmitting(true);
+    //callBack();
   };
 
   return {
     handleChange,
     handleSubmit,
     values,
+    errors,
   };
 };
 
