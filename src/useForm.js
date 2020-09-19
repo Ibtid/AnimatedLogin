@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const useForm = (callBack) => {
   const [values, setValues] = useState({ username: "", password: "" });
+  const [errors, setErrors] = useState({ username: "", password: "" });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -13,6 +14,7 @@ const useForm = (callBack) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    //handling errors
     callBack();
   };
 
