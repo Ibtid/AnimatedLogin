@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.scss";
 import Login from "./components/login/login";
 import Register from "./components/login/register";
+import Slider from "./components/login/Slider";
 
 function App() {
   const [isLogginActive, setisLogginActive] = useState(true);
@@ -10,7 +11,8 @@ function App() {
     setisLogginActive(!isLogginActive);
   };
 
-  var current = isLogginActive ? "Register" : "Login";
+  var current = isLogginActive ? "Register here" : "Login here";
+  var currentMessage = isLogginActive ? "New with us?" : "Have an account?";
   var currentActive = isLogginActive ? "right-side left" : "right-side right";
 
   return (
@@ -20,8 +22,9 @@ function App() {
           {isLogginActive && <Login />}
           {!isLogginActive && <Register />}
         </div>
-        <RightSide
+        <Slider
           current={current}
+          currentMessage={currentMessage}
           currentActive={currentActive}
           isLogginActive={isLogginActive}
           onClick={switchLogginHandler}
@@ -30,15 +33,5 @@ function App() {
     </div>
   );
 }
-
-const RightSide = (props) => {
-  return (
-    <div className={props.currentActive} onClick={props.onClick}>
-      <div className="inner-container">
-        <div className="text">{props.current}</div>
-      </div>
-    </div>
-  );
-};
 
 export default App;

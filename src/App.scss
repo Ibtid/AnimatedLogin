@@ -1,5 +1,6 @@
 //Custom Fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 
 .App {
   text-align: center;
@@ -69,7 +70,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 60%;
+    height: 70%;
     background-color: #3498db;
     width: 100%;
     position: absolute;
@@ -81,32 +82,38 @@
     box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
 
     &.right {
-      right: -40%;
+      right: -50%;
       align-items: flex-end;
       &:hover {
-        right: -45%;
+        right: -55%;
       }
     }
     &.left {
-      right: 40%;
+      right: 50%;
       align-items: flex-start;
       &:hover {
-        right: 45%;
+        right: 55%;
       }
     }
 
     .text {
+      font-family: "PT Sans", sans-serif;
       font-size: 21px;
       font-weight: 500;
       color: #fff;
       margin-right: 3em;
       margin-left: 3em;
+
+      .message {
+        font-size: 16px;
+      }
     }
   }
 }
 
 //Button
 .btn {
+  font-family: "PT Sans", sans-serif;
   font-size: 21px;
   padding: 5px 20px;
   border: 0;
