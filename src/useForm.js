@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useForm = (callBack, validate) => {
   const [values, setValues] = useState({ username: "", password: "" });
-  const [errors, setErrors] = useState({ username: "", password: "" });
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
@@ -20,6 +20,14 @@ const useForm = (callBack, validate) => {
     setIsSubmitting(true);
     //callBack();
   };
+
+  useEffect(() => {
+    //check to see if there are no errors
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      callBack();
+    }
+    //call our callback
+  }, [errors]);
 
   return {
     handleChange,
