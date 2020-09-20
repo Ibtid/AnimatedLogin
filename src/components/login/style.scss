@@ -38,12 +38,13 @@
         width: fit-content;
 
         .error {
+          margin: 5px;
           color: red;
-          font-size: 8px;
+          font-size: 10px;
         }
 
         label {
-          font-size: 14px;
+          font-size: 16px;
         }
 
         input {
@@ -51,7 +52,7 @@
           min-width: 18em;
           height: 25px;
           padding: 0px 10px;
-          font-size: 12px;
+          font-size: 14px;
           font-family: "PT Sans", sans-serif;
           background-color: #f3f3f3;
           border: 0;
