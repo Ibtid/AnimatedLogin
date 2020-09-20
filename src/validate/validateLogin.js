@@ -3,7 +3,7 @@ export default function validateLogin(values) {
 
   //username//more than 0 characters
   if (!values.username) {
-    errors.username = "Username is required";
+    errors.username = "*Username is required";
   }
   //email
   //need the string to be and email
@@ -14,9 +14,9 @@ export default function validateLogin(values) {
   }*/
 
   if (!values.password) {
-    errors.password = "Password is required";
-  } else if (values.password.length < 10) {
-    errors.password = "Password needs to be more than 5 characters";
+    errors.password = "*Password is required";
+  } else if (values.password.length < 5) {
+    errors.password = "*Password needs to be atleast 5 characters";
   }
 
   return errors;
