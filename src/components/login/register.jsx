@@ -1,8 +1,19 @@
 import React from "react";
 import loginImg from "../../login.svg";
 import "./style.scss";
+import useForm from "../../useForm/useFormRegister";
+import validate from "../../validate/validateRegister";
 
 const Register = () => {
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    submit,
+    validate
+  );
+
+  function submit() {
+    console.log("Submitted Succesfully");
+  }
+
   return (
     <div className="base-container">
       <div className="header">Register</div>
@@ -10,25 +21,49 @@ const Register = () => {
         <div className="image">
           <img src={loginImg} />
         </div>
-        <div className="form">
+        <form className="form" onSubmit={handleSubmit} noValidate>
           <div className="form-group">
             <label htmlFor="username">Username</label>
-            <input type="text" name="username" placeholder="Username" />
+            {errors.username && <p className="error">{errors.username}</p>}
+            <input
+              className={`${errors.username && "inputError"}`}
+              type="text"
+              name="username"
+              placeholder="Username"
+              values={values.username}
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" placeholder="email" />
+            {errors.email && <p className="error">{errors.email}</p>}
+            <input
+              className={`${errors.email && "inputError"}`}
+              type="email"
+              name="email"
+              placeholder="email"
+              value={values.email}
+              onChange={handleChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="username">Password</label>
-            <input type="password" name="password" placeholder="Password" />
+            {errors.password && <p className="error">{errors.password}</p>}
+            <input
+              className={`${errors.password && "inputError"}`}
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={values.password}
+              onChange={handleChange}
+            />
           </div>
-        </div>
-      </div>
-      <div className="footer">
-        <button type="button" className="btn">
-          Register
-        </button>
+          <div className="footer">
+            <button type="submit" className="btn">
+              Register
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

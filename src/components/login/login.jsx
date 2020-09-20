@@ -1,8 +1,8 @@
 import React from "react";
 import loginImg from "../../login.svg";
 import "./style.scss";
-import useForm from "../../useForm";
-import validate from "../../validateLogin";
+import useForm from "../../useForm/useFormLogin";
+import validate from "../../validate/validateLogin";
 
 const Login = () => {
   const { handleChange, handleSubmit, values, errors } = useForm(
